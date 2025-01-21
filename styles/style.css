@@ -294,7 +294,7 @@ header{
         }
     }
     .sidebarnav{
-        padding:45px 15px;
+        padding:40px 15px;
         display: flex;
         align-items: center;
         gap:15px;
