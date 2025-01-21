@@ -294,10 +294,12 @@ header{
         }
     }
     .sidebarnav{
-        padding: 15px;
+        padding:45px 15px;
         display: flex;
-        overflow-x: auto;
+        align-items: center;
         gap:15px;
+        overflow-x: auto;
+        overflow-y: hidden;
         white-space: nowrap;
         div{
             display: flex;
