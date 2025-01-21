@@ -10,7 +10,7 @@ body{
     overflow-x: hidden;
 }
 header{
-    border-bottom: 0.2px solid rgb(215, 209, 209);
+    border: 0.5px solid rgb(207, 207, 207);
     z-index: 3000;
     position: sticky;
     top:0
@@ -262,7 +262,7 @@ header{
     .sidebar{
         position: fixed;
         z-index: 2000;
-        top:125px;
+        top:127.5px;
         bottom: 0;
         right: -100%;
         background-color: white;
@@ -279,6 +279,9 @@ header{
         font-size: 15px;
         gap:8px;
         font-weight: 600;
+        #sdb1{
+            height: 42px;
+        }
         div{
             display: flex;
             justify-content: center;
