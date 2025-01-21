@@ -6,6 +6,14 @@
     text-decoration: none;
     font-family: 'SF Pro Display' , sans-serif;
 }
+body{
+    overflow-x: hidden;
+}
+header{
+    z-index: 3000;
+    position: sticky;
+    top:0
+}
 .navtop{
     background-color: rgb(246, 247, 248);
     display: flex;
@@ -42,7 +50,7 @@
 }
 .dropdown1content{
     position: relative;
-    z-index: 1000;
+    z-index: 3000;
     margin-top: 16px;
     background-color: white;
     font-weight: 550;
@@ -121,7 +129,7 @@
         }
     }
     .dropdown2content{
-        z-index: 1000;
+        z-index: 3000;
         position: relative;
         margin-top: 16px;
         background-color: white;
@@ -173,6 +181,7 @@
         cursor: pointer;
     }
     .navbottom{
+        background-color: white;
         height: 75px;
         padding: 0 15px;
         display: flex;
@@ -198,7 +207,6 @@
         display: none;
         height: 100%;
         width: 100%;
-        background-color: white;
         input{
             border: 1px solid black;
             color: rgb(159, 159, 159);
@@ -248,20 +256,18 @@
         display: none;
     }
     #inp4:checked ~ .sidebar{
-        height:100%;
         right:0;
-        
     }
     .sidebar{
-        position: relative;
-        top: 0;
-        right: -768px;
-        bottom: 0;
-        height: 0;
+        position: fixed;
+        right: -100%;
+        background-color: white;
+        width: 100%;
+        overflow-y: auto;
+        min-height: 100vh;
         transition: .5s;
         display: flex;
         flex-direction: column;
-        overflow: hidden;
     }
     .sidebartop{
         display: flex;
@@ -408,3 +414,6 @@
            transition: 0.5s;
         }
     }
+
+        
+    
