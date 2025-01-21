@@ -260,6 +260,9 @@ header{
     }
     .sidebar{
         position: fixed;
+        z-index: 2000;
+        top:125px;
+        bottom: 0;
         right: -100%;
         background-color: white;
         width: 100%;
