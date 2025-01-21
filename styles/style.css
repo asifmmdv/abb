@@ -216,6 +216,7 @@ header{
             font-weight: 300;
             outline: none;
             border: none;
+            background-color: #ffffff;
         }
         input[type="search"]::-webkit-search-cancel-button {
             display: none;
