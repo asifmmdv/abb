@@ -10,6 +10,7 @@ body{
     overflow-x: hidden;
 }
 header{
+    border-bottom: 0.2px solid rgb(215, 209, 209);
     z-index: 3000;
     position: sticky;
     top:0
