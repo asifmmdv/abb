@@ -198,6 +198,7 @@
         display: none;
         height: 100%;
         width: 100%;
+        background-color: white;
         input{
             border: 1px solid black;
             color: rgb(159, 159, 159);
