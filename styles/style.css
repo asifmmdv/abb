@@ -424,6 +424,78 @@ header{
            transition: 0.5s;
         }
     }
+    .container {
+        margin: 0 auto;
+    }
 
+    .swiper-container {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .swiper-wrapper {
+        display: flex;
+        transition: transform 0.5s ease;
+        
+    }
+
+    .swiper-slide {
+        flex: 0 0 100%;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        background: linear-gradient(90deg, #E1EBFF 9.88%, #AFB9CD 92.09%);
+        border-radius: 8px;
+    }
+
+    .swiper-slide img {
+        max-height: 300px;
+        border-radius: 8px;
+    }
+
+    .swiper-pagination {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+        background-color: #ddd;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: #333;
+    }
+
+    @media (max-width: 768px) {
+        .swiper-slide {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .swiper-slide img {
+            margin-top: 20px;
+            animation: slide-in 0.5s ease-in-out;
+        }
+
+        @keyframes slide-in {
+            from {
+                transform: translateY(-50%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    }
         
     
