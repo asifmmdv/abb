@@ -8,6 +8,7 @@
     <title>ABB</title>
 </head>
     <body>
+      <div class="mobileheader">
         <input type="checkbox" id="inp4">
         <header>
         <div class="navtop">
@@ -314,6 +315,90 @@
             </div>
             </div>
         </div> 
+     </div>
+     <input type="checkbox" id="inp13">
+     <div class="desktopheader">
+        <div class="desktopheadertop">
+            <div class="desktopheadertopleft">
+                <span>Haqqımızda</span>
+                <span>Dayanıqlı İnkişaf Hesabatları</span>
+                <span>Tariflər</span>
+                <span>Xəbərlər</span>
+                <span>Satınalmalar</span>
+                <span>Xidmət şəbəkəsi</span>
+                <span>Araşdırma</span>
+                <span>İnvestorlarla əlaqə</span>
+            </div>
+            <div class="desktopheadertopright">
+                <button><label for="inp13"><div id="desktopsearchbutton"><img src="./images/search.svg" id="searchlogo" alt="">Axtarış</label></div></button>
+                <input type="checkbox" id="inp14">
+                        <div class="dropdown3head">
+                        <label for="inp14">
+                            <div class="ddhc3">
+                                <span>AZ</span><img src="./images/select-arrow-down.svg" alt="arr2">
+                            </div>
+                            </label>
+                        </div>
+                        <div class="dropdown3content">
+                            <ul>
+                                <li><img src="./images/flag-uk.svg" alt="uk"><span>EN</span></li>
+                                <li><img src="./images/flag-ru.svg" alt="ru"><span>RU</span></li>
+                            </ul>
+                        </div>
+                        <span id="desktel"><img src="./images/phone.svg" alt="">937</span> 
+            </div>
+        </div>
+        <div class="desktopheadersbottom">
+                <div id="desktopsearch">
+                    <input type="search" placeholder="Sizə necə kömək edə bilərik?">
+                    <button><label for="inp13"><img src="./images/close.svg" alt=""></label></button>
+                </div>
+                <div class="bottomswitch">
+            <div class="desktopheadersbottomstop">
+                <div class="desktopheadersbottomstopleft">
+                    <div class="desktopheadersbottomstopleftleft">
+                    <img src="./images/logo.svg" alt="lgb">
+                    </div>
+                <div class="desktopheadersbottomstopleftright">
+                    <span class="cursorspan" id="ferdi"><span>Fərdi Şəxslər</span><span>/</span></span>
+                    <span class="cursorspan" id="kicik"><span>Kiçik Biznes</span><span>/</span></span>
+                    <span class="cursorspan" id="kob"><span>KOB</span><span>/</span></span>
+                    <span class="cursorspan" id="kor">Korporativ</span>
+                </div>
+                </div>
+                <div class="desktopheadersbottomstopright">
+                    <div class="karportal"><img src="./images/career-portal.svg" alt=""><span>Karyera portalı</span></div>
+                    <div class="interbank"><img src="./images/internet-banking-signin.svg" alt="">İnternet Bankçılıq</div>
+                </div>
+            </div>
+            <div class="dektopheadersbottomsbottom">
+                <div class="megamenu">
+                    <div class="kartlar"><div class="bluehover">Kartlar</div>
+                        <div class="kartlarcontent">
+                            <div class="contentrows">
+                                <span>sagol</span>
+                                <div class="contentrowscolumn">
+                                    <span>salam</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kartlar"><div class="bluehover">Kartlar</div>
+                        <div class="kartlarcontent">
+                            <div class="contentrows">
+                                <span>sagol</span>
+                                <div class="contentrowscolumn">
+                                    <span>salam</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            </div>
+        </div>
+     </div>  
         <main>
             <div class="container">
                 <div class="swiper-container">
@@ -373,14 +458,11 @@
             const swiperWrapper = document.querySelector('.swiper-wrapper');
             const slides = document.querySelectorAll('.swiper-slide');
             const pagination = document.querySelector('.swiper-pagination');
-        
             let currentIndex = 0;
             let isDragging = false;
             let startX = 0;
             let offsetX = 0;
-            let autoSlideInterval; 
-        
-            
+            let autoSlideInterval;  
             function updatePagination() {
                 pagination.innerHTML = '';
                 slides.forEach((_, index) => {
@@ -391,8 +473,6 @@
                     pagination.appendChild(bullet);
                 });
             }
-        
-          
             function goToSlide(index) {
                 currentIndex = index;
                 const offset = -index * 100;
@@ -404,24 +484,18 @@
                 currentIndex = (currentIndex + 1) % slides.length;
                 goToSlide(currentIndex);
             }
-        
             function startAutoSlide() {
                 autoSlideInterval = setInterval(autoSlide, 3000); 
             }
-        
-          
             function stopAutoSlide() {
                 clearInterval(autoSlideInterval); 
             }
-        
-          
             function startDrag(event) {
                 isDragging = true;
                 startX = event.clientX || event.touches[0].clientX; 
                 swiperContainer.style.cursor = 'grabbing'; 
                 stopAutoSlide(); 
             }
-        
             function dragSlide(event) {
                 if (!isDragging) return;
         
@@ -429,14 +503,10 @@
                 offsetX = moveX;
                 swiperWrapper.style.transform = `translateX(${(currentIndex * -100) + (moveX / swiperContainer.offsetWidth) * 100}%)`; 
             }
-        
-         
             function endDrag(event) {
                 if (!isDragging) return;
-        
                 isDragging = false;
                 const moveThreshold = 50; 
-        
                 if (Math.abs(offsetX) > moveThreshold) {
                    
                     if (offsetX < 0) {
@@ -445,16 +515,11 @@
                         currentIndex = (currentIndex - 1 + slides.length) % slides.length;
                     }
                 }
-        
-             
                 swiperWrapper.style.transition = 'transform 0.3s ease'; 
                 goToSlide(currentIndex);
                 swiperContainer.style.cursor = 'grab'; 
-        
                 startAutoSlide(); 
             }
-        
-         
             swiperContainer.addEventListener('mousedown', startDrag);
             swiperContainer.addEventListener('touchstart', startDrag);
             swiperContainer.addEventListener('mousemove', dragSlide);
@@ -462,12 +527,8 @@
             swiperContainer.addEventListener('mouseup', endDrag);
             swiperContainer.addEventListener('touchend', endDrag);
             swiperContainer.addEventListener('mouseleave', endDrag); 
-        
-          
-            startAutoSlide();
-        
+            startAutoSlide();  
             updatePagination();
-        </script>
-        
+        </script> 
     </body>
-    </html>
+</html>
