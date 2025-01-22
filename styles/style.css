@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     text-decoration: 0;
+    box-sizing: border-box;
     list-style: none;
     text-decoration: none;
     font-family: 'SF Pro Display' , sans-serif;
@@ -23,8 +24,9 @@ header{
     justify-content: space-between;
     padding-right: 15px;
 }
+
 .dropdown1{
-    height: 22.5px;
+    position: relative;
     color: rgb(38, 38, 38);
     padding: 15px 0;
     input{
@@ -50,7 +52,7 @@ header{
     }
 }
 .dropdown1content{
-    position: relative;
+    position: absolute;
     z-index: 3000;
     margin-top: 16px;
     background-color: white;
@@ -106,7 +108,6 @@ header{
     }
 }
 .dropdown2{
-    height: 22.5px;
     font-weight: 300;
     padding: 15px 0;
     input{
@@ -466,7 +467,6 @@ header{
 
     .swiper-slide {
         flex: 0 0 100%;
-        box-sizing: border-box;
         display: flex;
         align-items: center;
         justify-content: space-between;
