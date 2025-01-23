@@ -666,7 +666,7 @@ header{
     }
     .desktopheadersbottomstop{
         height: 74px;
-        border-bottom: 1px solid rgb(248, 244, 244);
+        border-bottom: 0.1px solid  rgb(238, 235, 235);
         display: flex;
         align-items: center;
         padding: 0 40px;
@@ -682,6 +682,7 @@ header{
         img{
             width: 110.52px;
             height: 50px;
+            margin-top: 4px;
         }
     }
     .desktopheadersbottomstopleftright{
@@ -695,7 +696,7 @@ header{
         .cursorspan{
             cursor: pointer;
             display: flex;
-            gap: 15px;
+            gap: 18px;
             justify-content: center;
         }
         #kicik:hover{
@@ -717,9 +718,6 @@ header{
             }
         }
     }
-    .dektopheadersbottomsbottom{
-        border-bottom: 1px solid rgb(216, 212, 212);
-    }
     .desktopheadersbottomstopright{
         display: flex;
         gap:25px;
@@ -738,19 +736,17 @@ header{
         }
         
     }
+    .dektopheadersbottomsbottom{
+        border-bottom: 3px solid rgb(238, 235, 235);
+    }
     .megamenu{
         position: relative;
         color: #17253a;
         font: 15px;
         font-weight: 400;
-        height: 75px;
-        gap: 20px;
+        height: 74.3px;
         position: relative;
-        display: flex;
-        .kartlarcontent{
-            position: absolute;
-            
-        }   
+        display: flex; 
         .bluehover{
             display: flex;
             position: relative;
@@ -763,6 +759,10 @@ header{
         .kartlar{
             display: flex;
             align-items: center;
+            height: 100%;
+            padding-right: 24px;
+        }
+        #kart1{
             margin-left: 40px;
         }
     }
@@ -775,34 +775,102 @@ header{
         height: 3px; 
         background-color: rgb(59, 138, 224); 
         border-radius: 2px;
-        transition: width 0.3s ease, left 0.3s ease; 
+        transition: width 0.2s ease, left 0.3s ease; 
     }
     .bluehover:hover::before {
         width: 100%; 
         left: 0;
     }
-    .bluehover:hover ~ .kartlarcontent{
-        display: block;
+    .bluehover:hover ~ .kartlarborder{
+        display: flex;
     }
-   
+    .kartlarborder:hover{
+        display: flex;
+    }
     .kartlarcontent{
-        margin-top: 0.3px;
+        display: flex;
+        flex-direction: row;
+        border-left: 0.1px solid rgb(247, 244, 244);
+        border-right: 0.1px solid rgb(247, 244, 244);
+        height: 100%;
+        width: 100%;
+        color: #262626;
+        padding: 40px 0 40px 50px;
+        background-color: white;
+        font-size: 17px;
+        font-weight: 300;
+        .mgmclose{
+            margin-left: auto;
+            button{
+                background: initial;
+                border: none;
+                img{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .kartlarborder{
         display: none;
         position: absolute;
-        top:76px;
+        top:74px;
+        border-top: 0.5px solid rgb(238, 235, 235);
         left: 0;
-        padding: 50px;
-        color: white;
+        padding:0 40px;
         right:0;
-        min-width: 100vw;
+        min-width: 100%;
         z-index: 3000;
-        background-color: rgb(1, 1, 1);
+        background-color: white;
     }
-    .contentrows{
+    .contentcolumn{
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        gap: 30px;
+        width: 200px;
+        span{
+        cursor: pointer;}
     }
-    
+    .contentcolumnimg{
+        margin-left: auto;
+        display: flex;
+        gap: 30px;
+        padding: 0 24px 0 48px;
+        border-left: 0.5px solid rgb(238, 235, 235);
+        img{
+            height: 217px;
+            width: 340px;
+        }
+        .onlinekredit{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            h4{
+                font-size: 24px;
+                font-weight: 500;
+                width: 243px;
+            }
+            button{
+                cursor: pointer;
+                background: initial;
+                border-radius: 5px;
+                color: #262626;
+                height: 50px;
+                width: 150px;
+                font-size: 16px;
+                font-weight: 500;
+                padding: 14px 33px;
+                &:hover{
+                    background-color: #262626;
+                    color: white;
+                }
+            }
+        }
+    }
+
+
+
+
+
     @media only screen and (max-width: 1000px) {
         .desktopheader{
             display: none;
@@ -833,10 +901,15 @@ header{
             display: none;
         }
     }
-    @media only screen and (max-width:1180px)  {
+    @media only screen and (max-width:1230px)  {
         .desktopheadertopleft{
             gap:15px;
             padding: 10px 0;
             line-height: 5px;
+        }
+        .contentcolumnimg{
+            img{
+                display: none;
+            }
         }
       }
