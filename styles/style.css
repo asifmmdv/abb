@@ -664,6 +664,10 @@ header{
     #inp13:checked ~ .desktopheader .bottomswitch {
         display: none;
     }
+    .desktopheadersbottom{
+        position: sticky !important;
+        top: 0;
+    }
     .desktopheadersbottomstop{
         height: 74px;
         border-bottom: 0.1px solid  rgb(238, 235, 235);
@@ -790,8 +794,8 @@ header{
     .kartlarcontent{
         display: flex;
         flex-direction: row;
-        border-left: 0.1px solid rgb(247, 244, 244);
-        border-right: 0.1px solid rgb(247, 244, 244);
+        border-left: 0.1px solid rgb(251, 251, 251);
+        border-right: 0.1px solid rgb(251, 251, 251);
         height: 100%;
         width: 100%;
         color: #262626;
@@ -825,12 +829,14 @@ header{
     .contentcolumn{
         display: flex;
         flex-direction: column;
-        gap: 30px;
-        width: 200px;
+        gap: 25px;
+        padding-right: 48px;
         span{
-        cursor: pointer;}
+        cursor: pointer;
+        max-width: 200px;}
     }
     .contentcolumnimg{
+        max-width: 58%;
         margin-left: auto;
         display: flex;
         gap: 30px;
