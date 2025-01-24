@@ -955,8 +955,7 @@ header{
         }
     }
     .section3{
-        margin: 24px 0;
-        padding: 20px;
+        padding: 48px 20px 48px 5px;
         background-color: rgb(249, 249, 249);
         display: flex;
     }
@@ -1085,7 +1084,9 @@ header{
         border: 1px solid #2058bb;
         border-radius: 8px;
       }      
-    
+      .section4{
+        padding: 48px 15px;
+      }
     @media only screen and (max-width: 1000px) {
         .desktopheader{
             display: none;
