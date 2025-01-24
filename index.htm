@@ -373,7 +373,7 @@
             </div>
             <div class="dektopheadersbottomsbottom">
                 <div class="megamenu">
-                    <div class="kartlar" id="kart1"><div class="bluehover">Kartlar</div>
+                    <div class="kartlar" id="kart1"><div class="bluehover" >Kartlar</div>
                         <div class="kartlarborder">
                             <div class="kartlarcontent">
                                 <div class="contentcolumn">
@@ -387,7 +387,7 @@
                             </div>    
                         </div>
                     </div>
-                    <div class="kartlar"><div class="bluehover">Kreditlər</div>
+                    <div class="kartlar"><div class="bluehover" >Kreditlər</div>
                         <div class="kartlarborder">
                             <div class="kartlarcontent">
                                 <div class="contentcolumn">
@@ -469,7 +469,7 @@
                             </div>    
                         </div>
                     </div>
-                    <div class="kartlar" ><div class="bluehover">Əmanətlər</div>
+                    <div class="kartlar"><div class="bluehover">Əmanətlər</div>
                         <div class="kartlarborder">
                             <div class="kartlarcontent">
                                 <div class="contentcolumn">
@@ -637,6 +637,37 @@
                     </article>
                 </div>
             </section>
+            <section class="section3">
+                <div class="credit">
+                    <div class="creditimage"><img src="./images/1711633711_kreditt-banner-final.webp" alt="bn">  
+                    </div>
+                    <div class="creditcontent">
+                        <h2>Sizə özəl kredit təklifimizi dərhal öyrənin!</h2>
+                        <h4>40 000 AZN-dək komissiyasız kredit əldə edin</h4>
+                        <div class="inputsection">
+                            <input class="creditinput" type="text" placeholder="FIN kod*" />
+                            <input class="creditinput" type="text" placeholder="Mobil telefon nömrəsi *"/>
+                            <button id="info"><img src="./images/popover-info.svg" alt="i" ></button> 
+                            <div id="fin">
+                                <div id="passports">
+                                    <img src="images/popover-fin-1.png" alt="f1" />
+                                    <img src="images/popover-fin-2.png" alt="f2" />
+                                </div>
+                                <h4>FIN kod*</h4>
+                            </div>
+                        </div>    
+                        <div>
+                            <div id="agreement">
+                                <label for="inp15">
+                                  <input id="inp15" type="checkbox"/> 
+                                </label>
+                                <p>Kredit tarixçəm haqqında məlumatlarımın <u>Azərbaycan Kredit Bürosundan</u>  alınmasına və <u>ASAN Finans/E-GOV</u>  sistemi vasitəsilə şəxsiyyəti təsdiq edən sənəd, iş yeri, əmək haqqı və s. məlumatlarımın ABB-yə təqdim edilməsinə razılıq verirəm</p>
+                            </div>
+                            <button class="agreebtn">Davam edin</button> 
+                        </div>   
+                    </div>
+                </div> 
+            </section>
         </main>
         <script>
             document.querySelectorAll('.sidebaraccordion input[type="checkbox"]').forEach(input => {
@@ -728,5 +759,18 @@
             startAutoSlide();  
             updatePagination();
         </script>
+        <script>
+            const checkbox = document.getElementById('inp15');
+            const button = document.querySelector('.agreebtn');
+            checkbox.addEventListener('change', () => {
+            if (checkbox.checked) {
+            button.classList.add('active'); 
+            button.removeAttribute('disabled'); 
+            } else {
+                    button.classList.remove('active'); 
+                    button.setAttribute('disabled', 'true');
+            }
+        });
+            </script>
     </body>
 </html>

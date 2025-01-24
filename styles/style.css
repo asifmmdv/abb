@@ -954,6 +954,138 @@ header{
             font-weight: 600;
         }
     }
+    .section3{
+        margin: 24px 0;
+        padding: 20px;
+        background-color: rgb(249, 249, 249);
+        display: flex;
+    }
+    .credit{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+    .creditimage{
+        width: 100%;
+        img{
+        object-fit: contain;
+        width: 100%;
+        }
+    }
+    .creditcontent{
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        color: #262626;
+        h2{
+          font-size: 40px;
+          padding: 10px ;
+          line-height: 48px;
+          font-weight: 600;
+          max-width: 495px;
+        }
+        h4{
+            font-size: 18px;
+            font-weight: 500;
+            padding: 10px ;
+          }
+          .creditinput{
+            width: 100%;
+            max-width: 495px;
+            height: 60px;
+            padding: 0 20px;
+            outline: none;
+            margin: 10px ;
+            border: 2px solid #dcdcdc;
+            border-radius: 5px;
+            color: #585858;
+            background-color: initial;
+            font-size: 16px;
+          }
+          .inputsection{
+            max-width: 495px;
+            width: 100%;
+            position: relative;
+          }
+          #info{
+            position: absolute;
+            width: 24px;
+            top:18%;
+            right: 2%;
+            background: initial;
+            border: none;
+          }
+           }
+          #passports{
+            display: flex;
+            gap: 10px;
+          }
+           #fin{
+            position: absolute;
+            right: 10%;
+            top:-30%;
+            z-index: 500;
+            padding: 15px 10px;
+            border-radius: 5px;
+            background-color: #fff;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 160px;
+            img{
+                width: 100px;
+                height: 70px;
+            }
+           }
+          #info:hover ~ #fin{
+            display: flex;
+          }
+    #agreement{
+        display: flex;
+        gap: 10px;
+        margin: 10px ;
+        p{
+          color: #5b5c5e;
+        line-height: 20px;
+        max-width: 495px;
+        }
+       }
+    .agreebtn{
+        width: 100%;
+        max-width: 505px;
+        height: 50px;
+        margin: 30px 5px;
+        font-size: 16px;
+        border: 0;
+        background-color: #d7d9dd;
+        color: #fff;
+        cursor: not-allowed;
+        border-radius: 6px;
+        font-weight: 600;
+       }
+       #inp15:checked{
+        background-color:#2058bb  ;
+        color: #fff;
+        &::before{
+          content: '✓'; 
+          font-size: 20px;
+          color: white;
+          margin-left: 2px;
+      }
+    } 
+    .agreebtn.active{
+        background-color:#2058bb ;
+        cursor: pointer;
+      }
+      #inp15{
+        -webkit-appearance: none;
+        width: 23px; 
+        height: 23px;
+        border: 1px solid #2058bb;
+        border-radius: 8px;
+      }      
+    
     @media only screen and (max-width: 1000px) {
         .desktopheader{
             display: none;
@@ -1037,7 +1169,41 @@ header{
                 color: rgb(219, 219, 219);
             }
         }
-    }
+        .section3{
+            padding: 130px 60px;
+        }
+        .credit{
+            display: flex;
+            flex-direction: row-reverse;
+            margin: initial;
+            justify-content:  space-between;
+            h2{
+                font-size: 48px;
+            }
+            .creditimage{
+                width: 40%;
+                img{
+                    object-fit: cover;
+                    height: 560px;
+                    width: 520px;
+                }
+            }
+            .creditcontent{
+                width: 100%;
+                min-width: 495px;
+            }
+            
+        }
+        #fin{
+            right: -78%;
+            width: 350px;
+            height: 180px;
+            img{
+                width: 150px;
+                height: 100px;
+            }
+        }
+        }
     @media only screen and (max-width:1230px)  {
         .desktopheadertopleft{
             gap:15px;
