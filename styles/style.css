@@ -426,76 +426,6 @@ header{
            transition: 0.5s;
         }
     }
-    .swiper-container {
-        position: relative;
-        overflow: hidden;
-        width: 100%;
-        color: #262626;
-        h3{
-            font-size: 30px;
-            font-weight: 600;
-            line-height: 50px;
-        }
-        p{
-            font-size: 14px;
-            font-weight: 500;
-            margin-top: 30px;
-        }
-        button{
-            margin-top: 20px;
-            height: 56px;
-            width: 94px;
-            border: 1px solid #262626;
-            border-radius: 5px;
-            background-color: initial;
-            a{
-                font-size: 16px;
-                color: #262626;
-                font-weight: 500;
-            }
-        }
-    }
-
-    .swiper-wrapper {
-        display: flex;
-        transition: transform 0.5s ease;
-        
-    }
-
-    .swiper-slide {
-        flex: 0 0 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 40px 20px;
-        background: linear-gradient(90deg, #E1EBFF 9.88%, #AFB9CD 92.09%);
-        border-radius: 8px;
-    }
-
-    .swiper-slide img {
-        max-height: 300px;
-        border-radius: 8px;
-    }
-    .swiper-pagination {
-        position: absolute; 
-        bottom: 20px; 
-        left: 50%; 
-        transform: translateX(-50%); 
-        display: flex;
-        gap: 10px;
-    }
-    
-    .swiper-pagination-bullet {
-        width: 35px;
-        height: 4px;
-        background-color: rgb(231, 235, 242);
-        cursor: grab;
-        transition: background-color 0.3s ease;
-    }
-    
-    .swiper-pagination-bullet-active {
-        background-color:white;
-    }
     .desktopheader{
         position: sticky;
         top: 0;
@@ -874,7 +804,76 @@ header{
             }
         }
     }
+    .swiper-container {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        color: #262626;
+        h3{
+            font-size: 30px;
+            font-weight: 600;
+            line-height: 50px;
+        }
+        p{
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 30px;
+        }
+        button{
+            margin-top: 20px;
+            height: 56px;
+            width: 94px;
+            border: 1px solid #262626;
+            border-radius: 5px;
+            background-color: initial;
+            a{
+                font-size: 16px;
+                color: #262626;
+                font-weight: 500;
+            }
+        }
+        #sifarish{width: 128px;}
+    }
 
+    .swiper-wrapper {
+        display: flex;
+        transition: transform 0.5s ease;
+        
+    }
+
+    .swiper-slide {
+        flex: 0 0 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 40px 20px;
+        background: linear-gradient(90deg, #E1EBFF 9.88%, #AFB9CD 92.09%);
+    }
+
+    .swiper-slide img {
+        max-height: 300px;
+        border-radius: 8px;
+    }
+    .swiper-pagination {
+        position: absolute; 
+        bottom: 30px; 
+        left: 50%; 
+        transform: translateX(-50%); 
+        display: flex;
+        gap: 10px;
+    }
+    
+    .swiper-pagination-bullet {
+        width: 35px;
+        height: 4px;
+        background-color: rgb(231, 235, 242);
+        cursor: grab;
+        transition: background-color 0.3s ease;
+    }
+    
+    .swiper-pagination-bullet-active {
+        background-color:white;
+    }
 
 
 
@@ -908,6 +907,39 @@ header{
         .mobileheader{
             display: none;
         }
+        .swiper-container{
+        h3{
+            font-size: 45px;
+            max-width: 410px;
+        }
+        p{
+            font-size: 18px;
+        }
+        button{
+            width: 111px;
+            height: 54px;
+            margin-top: 55px;
+            &:hover{
+                background-color: #262626;
+                a{
+                    color: white;
+
+                }
+            }
+        }
+        #sifarish{width: 148px;}
+        }
+
+        .swiper-slide{
+            padding: 0px 60px;
+            img{
+                max-height: 500px;
+            }
+        }
+        .swiper-pagination {
+            left: 10%;
+        }
+
     }
     @media only screen and (max-width:1230px)  {
         .desktopheadertopleft{
