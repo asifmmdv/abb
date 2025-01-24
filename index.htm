@@ -772,5 +772,15 @@
             }
         });
             </script>
+            <script>
+                const inputCheckbox = document.getElementById('inp4');
+                inputCheckbox.addEventListener('change', () => {
+                if (inputCheckbox.checked) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+                });
+            </script>
     </body>
 </html>
