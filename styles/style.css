@@ -1086,7 +1086,179 @@ header{
       }      
       .section4{
         padding: 48px 15px;
+        h3{
+            margin-bottom: 30px;
+            font-size: 22px;
+            font-weight: 600;
+        }
+        .calcs{
+            display: flex;
+            flex-direction: column;
+            gap:50px;
+        }
+        .calcnumbers{
+            display: flex;
+        }
+        .calcrow{
+            margin-left: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;  
+            color: #262626;
+            #crow1{
+                font-size: 26px;
+                font-weight: 600;
+            }
+            #crow2{
+                font-size: 16px;
+                font-weight: 500;
+            }
+        }
       }
+      .slider-container {
+        border: 2px solid #e4e4e4;
+        border-radius: 5px;
+        padding: 20px;
+        position: relative;
+        max-width: 400px;
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+
+    .slider-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        #azn{
+            font-weight: 600;
+            font-size: 16px;
+            color: #262626;
+        }
+    }
+
+    .slider-header span {
+        font-size: 16px;
+        color: #666;
+    }
+
+    .slider-header input {
+        border: none;
+        outline: none;
+        text-align: right;
+        padding-right: 10px;
+        max-width: 80px;
+        font-weight: 500;
+    }
+   
+
+    .range-slider {
+        position: relative;
+        top:28px;
+        left: -21px;
+    }
+
+    .range-slider input[type="range"] {
+        width: 113%;
+        -webkit-appearance: none;
+        appearance: none;
+        background: linear-gradient(to right, #007bff 0%, #007bff 15%, #e4e4e4 10%, #e4e4e4 100%);
+        position: relative;
+    }
+
+    .range-slider input[type="range"]::-webkit-slider-runnable-track {
+        height: 5px;
+        background: transparent;
+        border-radius: 5px;
+    }
+
+    .range-slider input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        height: 20px;
+        width: 20px;
+        background :url(/images/range-handle.svg),center/cover;   
+        position: relative;
+        cursor: pointer;
+        top:-7px;
+        border-radius: 50%;
+        box-shadow: 0 0 2px #000000;
+    }
+
+    .range-slider input[type="range"]::-moz-range-progress {
+        background-color: #007bff;
+        height: 5px;
+        border-radius: 5px;
+    }
+
+    .range-slider input[type="range"]::-moz-range-track {
+        background-color: #e4e4e4;
+        height: 5px;
+        border-radius: 5px;
+    }
+
+    .range-slider input[type="range"]::-ms-fill-lower {
+        background-color: #007bff;
+        border-radius: 5px;
+    }
+
+    .range-slider input[type="range"]::-ms-fill-upper {
+        background-color: #e4e4e4;
+        border-radius: 5px;
+    }
+    #custom-services-slider {
+        background-color: rgb(245, 245, 245);
+        padding: 50px 30px;
+        
+    }
+
+    #custom-services-slider h2 {
+        color: black;
+        font-size: 30px;
+        font-weight: bold;
+        text-align: left;
+        margin-bottom: 25px;
+    }
+
+    .custom-slider-container {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        cursor: grab;
+    }
+
+    .custom-slider-wrapper {
+        display: flex;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .custom-slider-slide {
+        flex: 0 0 80%;
+        max-width: 80%;
+        margin-right: 20px;
+        background-color: white;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+    }
+
+    .custom-slider-slide:hover {
+        transform: scale(1.05);
+    }
+
+    .custom-slider-slide img {
+        width: 132px;
+        height: 132px;
+    }
+
+    .custom-slider-slide h3 {
+        color: black;
+        font-size: 20px;
+        font-weight: 600;
+        margin: 15px 0 0;
+    }
+
     @media only screen and (max-width: 1000px) {
         .desktopheader{
             display: none;
@@ -1203,6 +1375,10 @@ header{
                 width: 150px;
                 height: 100px;
             }
+        }
+        .custom-slider-slide {
+            flex: 0 0 40%;
+            max-width: 24%;
         }
         }
     @media only screen and (max-width:1230px)  {

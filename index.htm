@@ -669,8 +669,92 @@
                 </div> 
             </section>
             <section class="section4">
-                
+                <h3>Kredit kalkulyatoru</h3>
+                <div class="calcs">
+                    <div class="calcranges">
+                        <div class="slider-container">
+                            <div class="slider-header">
+                                <span>Kredit məbləği</span>
+                                <div>
+                                    <input type="text" id="credit-amount" maxlength="5" value="5000" />
+                                    <span id="azn">AZN</span>
+                                </div>
+                            </div>
+                            <div class="range-slider">
+                                <input id="credit-slider" type="range" min="300" max="40000" step="1" value="5000">
+                            </div>
+                        </div>
+                        <div class="slider-container">
+                            <div class="slider-header">
+                                <span>Kredit məbləği</span>
+                                <div>
+                                    <input type="text" id="credit-amount" maxlength="5" value="5000" />
+                                    <span id="azn">AZN</span>
+                                </div>
+                            </div>
+                            <div class="range-slider">
+                                <input id="credit-slider" type="range" min="300" max="40000" step="1" value="5000">
+                            </div>
+                        </div>
+                        <div class="slider-container">
+                            <div class="slider-header">
+                                <span>Kredit məbləği</span>
+                                <div>
+                                    <input type="text" id="credit-amount" maxlength="5" value="5000" />
+                                    <span id="azn">AZN</span>
+                                </div>
+                            </div>
+                            <div class="range-slider">
+                                <input id="credit-slider" type="range" min="300" max="40000" step="1" value="5000">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calcnumbers">
+                        <div class="calcrow">
+                            <span id="crow1">860.03 ₼</span>
+                            <span id="crow2">Aylıq ödəniş</span>
+                        </div>
+                        <div class="calcrow">
+                            <span id="crow1">5160.18 ₼</span>
+                            <span id="crow2">Ümumi məbləğ</span>
+                        </div>
+                    </div>
+                </div>
             </section>
+            <section id="custom-services-slider">
+                <div class="custom-container">
+                    <h2>Xidmətlər</h2>
+                    <div class="custom-slider-container">
+                        <div class="custom-slider-wrapper">
+                            <div class="custom-slider-slide">
+                                <a href="https://abb-bank.az/az/xidmet-shebekesi/filiallar">
+                                    <img src="https://abb-bank.az/storage/uploads/files/1718088594_1717761390-rectangle-2.webp" alt="">
+                                    <h3>Xidmət ofisi və ATM-lər</h3>
+                                </a>
+                            </div>
+                            <div class="custom-slider-slide">
+                                <a href="https://randevu.abb-bank.az/">
+                                    <img src="https://abb-bank.az/storage/uploads/files/1717761406_rectangle-2-2.webp" alt="">
+                                    <h3>Onlayn növbə</h3>
+                                </a>
+                            </div>
+                            <div class="custom-slider-slide">
+                                <a href="https://abb-bank.az/az/ferdi/bank-24-7/melumat-merkezi">
+                                    <img src="https://abb-bank.az/storage/uploads/files/1717761471_rectangle-2-1.webp" alt="">
+                                    <h3>Məlumat mərkəzi</h3>
+                                </a>
+                            </div>
+                            <div class="custom-slider-slide">
+                                <a href="https://ibabankpayment.3dsecure.az/payment/type/IBA">
+                                    <img src="https://abb-bank.az/storage/uploads/files/1718088826_1717761482-rectangle-2-3.webp" alt="">
+                                    <h3>Kredit ödənişi</h3>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
         </main>
         <script>
             document.querySelectorAll('.sidebaraccordion input[type="checkbox"]').forEach(input => {
@@ -773,9 +857,9 @@
                     button.classList.remove('active'); 
                     button.setAttribute('disabled', 'true');
             }
-        });
-            </script>
-            <script>
+            });
+        </script>
+        <script>
                 const inputCheckbox = document.getElementById('inp4');
                 inputCheckbox.addEventListener('change', () => {
                 if (inputCheckbox.checked) {
@@ -784,6 +868,102 @@
                     document.body.style.overflow = '';
                 }
                 });
-            </script>
+        </script>
+        <script>
+        const creditSlider = document.getElementById('credit-slider');
+        const creditAmount = document.getElementById('credit-amount');
+        creditSlider.addEventListener('input', (e) => {
+            creditAmount.value = e.target.value;
+        });
+        const input = document.getElementById('credit-amount');
+        input.style.color = '#262626'; 
+        input.style.fontSize = '16px'; 
+        input.style.fontWeight = '600'; 
+        creditAmount.addEventListener('input', (e) => {
+            const value = parseInt(e.target.value, 10);
+            if (!isNaN(value)) {
+                if (value < 300) {
+                    creditAmount.value = 300;
+                } else if (value > 40000) {
+                    creditAmount.value = 40000;
+                }
+                creditSlider.value = creditAmount.value;
+            }
+        });
+        </script>
+        <script>
+            const slider = document.querySelector('.range-slider input[type="range"]');
+
+        slider.addEventListener('input', (e) => {
+            const value = (e.target.value - e.target.min) / (e.target.max - e.target.min);
+            e.target.style.setProperty('--value', value);
+            const slider = document.querySelector('.range-slider input[type="range"]');
+
+        slider.addEventListener('input', (e) => {
+            const value = (e.target.value - e.target.min) / (e.target.max - e.target.min) * 100;
+            e.target.style.background = `linear-gradient(to right, #007bff 0%, #007bff ${value}%, #e4e4e4 ${value}%, #e4e4e4 100%)`;
+        });
+        });
+        </script>
+        <script>
+            const customSliderWrapper = document.querySelector('.custom-slider-wrapper');
+            const customSliderSlides = document.querySelectorAll('.custom-slider-slide');
+        
+            let customIsDragging = false;
+            let customStartPos = 0;
+            let customCurrentTranslate = 0;
+            let customPrevTranslate = 0;
+            let customAnimationID;
+            let customCurrentIndex = 0;
+        
+            customSliderWrapper.addEventListener('mousedown', customStartDrag);
+            customSliderWrapper.addEventListener('mouseup', customEndDrag);
+            customSliderWrapper.addEventListener('mouseleave', customEndDrag);
+            customSliderWrapper.addEventListener('mousemove', customDrag);
+        
+            customSliderWrapper.addEventListener('touchstart', customStartDrag);
+            customSliderWrapper.addEventListener('touchend', customEndDrag);
+            customSliderWrapper.addEventListener('touchmove', customDrag);
+        
+            function customStartDrag(event) {
+                customIsDragging = true;
+                customStartPos = customGetPositionX(event);
+                customSliderWrapper.style.cursor = 'grabbing';
+                cancelAnimationFrame(customAnimationID);
+            }
+        
+            function customEndDrag() {
+                customIsDragging = false;
+                customSliderWrapper.style.cursor = 'grab';
+        
+                const customMovedBy = customCurrentTranslate - customPrevTranslate;
+        
+                if (customMovedBy < -50 && customCurrentIndex < customSliderSlides.length - 1) customCurrentIndex += 1;
+                if (customMovedBy > 50 && customCurrentIndex > 0) customCurrentIndex -= 1;
+        
+                customSetPositionByIndex();
+            }
+        
+            function customDrag(event) {
+                if (!customIsDragging) return;
+        
+                const customCurrentPosition = customGetPositionX(event);
+                customCurrentTranslate = customPrevTranslate + customCurrentPosition - customStartPos;
+                customSliderWrapper.style.transform = `translateX(${customCurrentTranslate}px)`;
+            }
+        
+            function customGetPositionX(event) {
+                return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+            }
+        
+            function customSetPositionByIndex() {
+                customCurrentTranslate = customCurrentIndex * -(customSliderSlides[0].offsetWidth + 20);
+                customPrevTranslate = customCurrentTranslate;
+                customSliderWrapper.style.transform = `translateX(${customCurrentTranslate}px)`;
+            }
+        
+            window.addEventListener('resize', customSetPositionByIndex);
+        </script>
+        
     </body>
 </html>
