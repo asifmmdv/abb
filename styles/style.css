@@ -1257,7 +1257,77 @@ header{
         font-weight: 600;
         margin: 15px 0 0;
     }
+    .news-section {
+        padding: 50px 20px;
+        background-color: #F5F5F5;
+    }
 
+    .news-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .news-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .news-header h2 {
+        font-size: 26px;
+        line-height: 31px;
+        font-weight: bold;
+        color: #000;
+    }
+
+    .news-header a {
+        font-size: 15px;
+        line-height: 18px;
+        font-weight: 500;
+        color: #000;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .news-header a svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .news-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .news-card {
+        background-color: #FFF;
+        border-radius: 8px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 64px;
+        text-decoration: none;
+    }
+
+    .news-card h3 {
+        font-size: 17px;
+        line-height: 24px;
+        font-weight: 500;
+        color: #000;
+    }
+
+    .news-card span {
+        font-size: 12px;
+        line-height: 14px;
+        font-weight: 500;
+        color: #757575;
+    }
     @media only screen and (max-width: 1000px) {
         .desktopheader{
             display: none;
@@ -1378,6 +1448,22 @@ header{
         .slider-item1 {
             flex: 0 0 40%;
             max-width: 23.7%;
+        }
+        .news-section {
+            padding: 20px 20px 90px;
+        }
+
+        .news-container {
+            gap: 25px;
+        }
+
+        .news-header h2 {
+            font-size: 30px;
+            line-height: 36px;
+        }
+
+        .news-grid {
+            grid-template-columns: repeat(3, 1fr);
         }
         }
     @media only screen and (max-width:1230px)  {
