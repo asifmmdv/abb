@@ -1205,33 +1205,32 @@ header{
         background-color: #e4e4e4;
         border-radius: 5px;
     }
-    #custom-services-slider {
+    #services-section1 {
+        padding: 50px 20px;
         background-color: rgb(245, 245, 245);
-        padding: 50px 30px;
-        
     }
 
-    #custom-services-slider h2 {
+    #services-section1 h2 {
         color: black;
         font-size: 30px;
         font-weight: bold;
-        text-align: left;
+        text-align: center;
         margin-bottom: 25px;
     }
 
-    .custom-slider-container {
+    .slider-container1 {
         position: relative;
         overflow: hidden;
         width: 100%;
         cursor: grab;
     }
 
-    .custom-slider-wrapper {
+    .slider-track1 {
         display: flex;
         transition: transform 0.3s ease-in-out;
     }
 
-    .custom-slider-slide {
+    .slider-item1 {
         flex: 0 0 80%;
         max-width: 80%;
         margin-right: 20px;
@@ -1243,16 +1242,16 @@ header{
         transition: transform 0.3s;
     }
 
-    .custom-slider-slide:hover {
+    .slider-item1:hover {
         transform: scale(1.05);
     }
 
-    .custom-slider-slide img {
+    .slider-item1 img {
         width: 132px;
         height: 132px;
     }
 
-    .custom-slider-slide h3 {
+    .slider-item1 h3 {
         color: black;
         font-size: 20px;
         font-weight: 600;
@@ -1376,9 +1375,9 @@ header{
                 height: 100px;
             }
         }
-        .custom-slider-slide {
+        .slider-item1 {
             flex: 0 0 40%;
-            max-width: 24%;
+            max-width: 23.7%;
         }
         }
     @media only screen and (max-width:1230px)  {

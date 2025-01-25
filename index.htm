@@ -721,30 +721,30 @@
                     </div>
                 </div>
             </section>
-            <section id="custom-services-slider">
-                <div class="custom-container">
+            <section id="services-section1">
+                <div class="services-container1">
                     <h2>Xidmətlər</h2>
-                    <div class="custom-slider-container">
-                        <div class="custom-slider-wrapper">
-                            <div class="custom-slider-slide">
+                    <div class="slider-container1">
+                        <div class="slider-track1">
+                            <div class="slider-item1">
                                 <a href="https://abb-bank.az/az/xidmet-shebekesi/filiallar">
                                     <img src="https://abb-bank.az/storage/uploads/files/1718088594_1717761390-rectangle-2.webp" alt="">
                                     <h3>Xidmət ofisi və ATM-lər</h3>
                                 </a>
                             </div>
-                            <div class="custom-slider-slide">
+                            <div class="slider-item1">
                                 <a href="https://randevu.abb-bank.az/">
                                     <img src="https://abb-bank.az/storage/uploads/files/1717761406_rectangle-2-2.webp" alt="">
                                     <h3>Onlayn növbə</h3>
                                 </a>
                             </div>
-                            <div class="custom-slider-slide">
+                            <div class="slider-item1">
                                 <a href="https://abb-bank.az/az/ferdi/bank-24-7/melumat-merkezi">
                                     <img src="https://abb-bank.az/storage/uploads/files/1717761471_rectangle-2-1.webp" alt="">
                                     <h3>Məlumat mərkəzi</h3>
                                 </a>
                             </div>
-                            <div class="custom-slider-slide">
+                            <div class="slider-item1">
                                 <a href="https://ibabankpayment.3dsecure.az/payment/type/IBA">
                                     <img src="https://abb-bank.az/storage/uploads/files/1718088826_1717761482-rectangle-2-3.webp" alt="">
                                     <h3>Kredit ödənişi</h3>
@@ -753,8 +753,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
-            
+            </section>    
         </main>
         <script>
             document.querySelectorAll('.sidebaraccordion input[type="checkbox"]').forEach(input => {
@@ -906,63 +905,72 @@
         });
         </script>
         <script>
-            const customSliderWrapper = document.querySelector('.custom-slider-wrapper');
-            const customSliderSlides = document.querySelectorAll('.custom-slider-slide');
+            const track1 = document.querySelector('.slider-track1');
+            const slides1 = document.querySelectorAll('.slider-item1');
         
-            let customIsDragging = false;
-            let customStartPos = 0;
-            let customCurrentTranslate = 0;
-            let customPrevTranslate = 0;
-            let customAnimationID;
-            let customCurrentIndex = 0;
+            let isDragging1 = false;
+            let startPosition1 = 0;
+            let currentTranslate1 = 0;
+            let previousTranslate1 = 0;
+            let currentIndex1 = 0;
         
-            customSliderWrapper.addEventListener('mousedown', customStartDrag);
-            customSliderWrapper.addEventListener('mouseup', customEndDrag);
-            customSliderWrapper.addEventListener('mouseleave', customEndDrag);
-            customSliderWrapper.addEventListener('mousemove', customDrag);
-        
-            customSliderWrapper.addEventListener('touchstart', customStartDrag);
-            customSliderWrapper.addEventListener('touchend', customEndDrag);
-            customSliderWrapper.addEventListener('touchmove', customDrag);
-        
-            function customStartDrag(event) {
-                customIsDragging = true;
-                customStartPos = customGetPositionX(event);
-                customSliderWrapper.style.cursor = 'grabbing';
-                cancelAnimationFrame(customAnimationID);
+            // Check screen width
+            function isDraggable1() {
+                return window.innerWidth < 1000;
             }
         
-            function customEndDrag() {
-                customIsDragging = false;
-                customSliderWrapper.style.cursor = 'grab';
+            // Event listeners
+            track1.addEventListener('mousedown', startDrag1);
+            track1.addEventListener('touchstart', startDrag1);
+            window.addEventListener('mouseup', endDrag1);
+            window.addEventListener('touchend', endDrag1);
+            window.addEventListener('mousemove', moveSlide1);
+            window.addEventListener('touchmove', moveSlide1);
         
-                const customMovedBy = customCurrentTranslate - customPrevTranslate;
+            function startDrag1(event) {
+                if (!isDraggable1()) return;
         
-                if (customMovedBy < -50 && customCurrentIndex < customSliderSlides.length - 1) customCurrentIndex += 1;
-                if (customMovedBy > 50 && customCurrentIndex > 0) customCurrentIndex -= 1;
-        
-                customSetPositionByIndex();
+                isDragging1 = true;
+                startPosition1 = getPositionX1(event);
+                track1.style.cursor = 'grabbing';
             }
         
-            function customDrag(event) {
-                if (!customIsDragging) return;
+            function endDrag1() {
+                if (!isDraggable1()) return;
         
-                const customCurrentPosition = customGetPositionX(event);
-                customCurrentTranslate = customPrevTranslate + customCurrentPosition - customStartPos;
-                customSliderWrapper.style.transform = `translateX(${customCurrentTranslate}px)`;
+                isDragging1 = false;
+                track1.style.cursor = 'grab';
+        
+                const movedBy1 = currentTranslate1 - previousTranslate1;
+        
+                if (movedBy1 < -50 && currentIndex1 < slides1.length - 1) {
+                    currentIndex1++;
+                } else if (movedBy1 > 50 && currentIndex1 > 0) {
+                    currentIndex1--;
+                }
+        
+                setPositionByIndex1();
             }
         
-            function customGetPositionX(event) {
+            function moveSlide1(event) {
+                if (!isDragging1 || !isDraggable1()) return;
+        
+                const currentPosition1 = getPositionX1(event);
+                currentTranslate1 = previousTranslate1 + currentPosition1 - startPosition1;
+                track1.style.transform = `translateX(${currentTranslate1}px)`;
+            }
+        
+            function getPositionX1(event) {
                 return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
             }
         
-            function customSetPositionByIndex() {
-                customCurrentTranslate = customCurrentIndex * -(customSliderSlides[0].offsetWidth + 20);
-                customPrevTranslate = customCurrentTranslate;
-                customSliderWrapper.style.transform = `translateX(${customCurrentTranslate}px)`;
+            function setPositionByIndex1() {
+                currentTranslate1 = currentIndex1 * -(slides1[0].offsetWidth + 20);
+                previousTranslate1 = currentTranslate1;
+                track1.style.transform = `translateX(${currentTranslate1}px)`;
             }
         
-            window.addEventListener('resize', customSetPositionByIndex);
+            window.addEventListener('resize', setPositionByIndex1);
         </script>
         
     </body>
